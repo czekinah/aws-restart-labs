@@ -6,13 +6,13 @@
 
 # AWS re/Start labs
 
-![program](https://img.shields.io/badge/program-AWS_re%2FStart-232F3E?style=flat-square) ![partner](https://img.shields.io/badge/partner-Edukasyon.ph-19A29A?style=flat-square) ![labs](https://img.shields.io/badge/labs-43_completed-2E8B2E?style=flat-square) ![deep_dives](https://img.shields.io/badge/deep_dives-6-FF9900?style=flat-square)
+![program](https://img.shields.io/badge/program-AWS_re%2FStart-232F3E?style=flat-square) ![partner](https://img.shields.io/badge/partner-Edukasyon.ph-19A29A?style=flat-square) ![labs](https://img.shields.io/badge/labs-43_completed-2E8B2E?style=flat-square) ![kc](https://img.shields.io/badge/knowledge_checks-72_at_100%25-19A29A?style=flat-square) ![deep_dives](https://img.shields.io/badge/deep_dives-7-FF9900?style=flat-square)
 
 What I built, what broke, and the one decision in each lab that was worth writing down.
 
 ## Deep dives
 
-Six pieces of work written up properly, with the commands, the transcripts and the failures.
+Seven pieces of work written up properly, with the commands, the transcripts and the failures.
 
 | Lab | The thing worth knowing | Folder |
 |---|---|---|
@@ -21,11 +21,12 @@ Six pieces of work written up properly, with the commands, the transcripts and t
 | Conditional search | `WHERE` filters rows, `HAVING` filters groups. Swapping them gives a wrong answer, not an error | [`sql-conditional-search/`](sql-conditional-search/) |
 | Log growth and retention | `logrotate` with no `create` leaves no active log file behind | [`linux-log-management/`](linux-log-management/) |
 | curl and wget | `curl` exits 0 on a 404 unless you pass `--fail` | [`curl-vs-wget/`](curl-vs-wget/) |
+| Bash strict mode | `set -e` alone misses a failure mid-pipeline, and `if` switches it off entirely | [`bash-failing-loudly/`](bash-failing-loudly/) |
 | Linux paths | Scripts need absolute paths. Prompts do not | [`linux-paths/`](linux-paths/) |
 
 ## Coursework
 
-All 43 completed labs, grouped by track, in [`coursework/`](coursework/).
+43 labs at 1/1 and 72 knowledge checks at 100%, grouped by track, with the module-by-module record in [`coursework/`](coursework/).
 
 | Track | Labs | Track | Labs |
 |---|---|---|---|
