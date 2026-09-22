@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 280" width="1280" height="280" role="img" aria-label="AWS re/Start Labs. Czekinah Tolentino, cohort PHMAN29, Edukasyon.ph.">
+  <defs>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#19A29A"/>
+      <stop offset="55%" stop-color="#8CD1CD"/>
+      <stop offset="100%" stop-color="#FF9900"/>
+    </linearGradient>
+    <style>
+      .t   { font-family: "Segoe UI", Helvetica, Arial, sans-serif; }
+      .h1  { font-size: 52px; font-weight: 700; letter-spacing: -0.5px; }
+      .sub { font-size: 21px; }
+      .meta{ font-size: 16px; font-weight: 600; letter-spacing: 1.6px; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="280" fill="#F2FBFA"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#rule)"/>
+
+  <text class="t h1"   x="72" y="112" fill="#232F3E">AWS re/Start Labs</text>
+  <text class="t sub"  x="72" y="152" fill="#14847D">Cloud, Linux, networking, security and SQL. Built, broken, written down.</text>
+  <text class="t meta" x="72"  y="208" fill="#19A29A">CZEKINAH TOLENTINO</text>
+  <text class="t meta" x="330" y="208" fill="#14847D">PHMAN29</text>
+  <text class="t meta" x="452" y="208" fill="#14847D">EDUKASYON.PH</text>
+  <rect x="72" y="226" width="200" height="3" fill="#FF9900"/>
+
+  <g transform="translate(936 74)">
+    <rect x="0"  y="72" width="252" height="44" rx="10" fill="#DCF1EF"/>
+    <circle cx="26" cy="94" r="7" fill="#8CD1CD"/>
+    <rect x="46" y="88" width="120" height="12" rx="6" fill="#232F3E" opacity="0.18"/>
+
+    <rect x="14" y="36" width="252" height="44" rx="10" fill="#DCF1EF"/>
+    <circle cx="40" cy="58" r="7" fill="#19A29A"/>
+    <rect x="60" y="52" width="150" height="12" rx="6" fill="#232F3E" opacity="0.22"/>
+
+    <rect x="28" y="0"  width="252" height="44" rx="10" fill="#19A29A"/>
+    <circle cx="54" cy="22" r="7" fill="#FF9900"/>
+    <rect x="74" y="16" width="176" height="12" rx="6" fill="#FFFFFF" opacity="0.55"/>
+  </g>
+
+  <g transform="translate(1204 214)" fill="#FF9900" opacity="0.9">
+    <ellipse cx="16" cy="16" rx="11" ry="9"/>
+    <ellipse cx="2"  cy="0"  rx="5"  ry="6"/>
+    <ellipse cx="14" cy="-5" rx="5"  ry="6.5"/>
+    <ellipse cx="27" cy="-2" rx="5"  ry="6"/>
+  </g>
+</svg>
