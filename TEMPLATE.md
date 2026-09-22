@@ -1,35 +1,21 @@
-# <Project name>
+# <Lab name>
 
-<Two or three lines: what this builds and the problem it solves.>
-
-## Architecture
-
-```mermaid
-flowchart LR
-    A[component] --> B[component]
-```
+<One sentence. What this builds and why it is not trivial.>
 
 ## What I built
 
-- <resource, with the setting that mattered>
-- <resource>
+| Component | Setting that mattered |
+|---|---|
+| <thing> | <the one setting worth naming> |
 
 ## The decision that mattered
 
-<The one design choice worth explaining, and why the alternative was worse.>
-
-## Commands
-
-```bash
-<the commands I actually ran, in order>
-```
+<The choice worth explaining, and why the alternative was worse. Two short paragraphs, maximum.>
 
 ## Evidence
 
-| Item | File |
-|---|---|
-| <what the capture shows> | `<name>.png` |
+<Link the transcript or query file. Paste only the lines that carry the point.>
 
 ## What broke
 
-<The failure I hit, what the error said, and what fixed it.>
+<The failure, the error text, the fix. If nothing broke, what surprised me instead.>
