@@ -1,0 +1,239 @@
++-------------+------------+-----------+--------+-----------+
+| employee_id | first_name | last_name | city   | salary    |
++-------------+------------+-----------+--------+-----------+
+|           5 | Ella       | Tan       | Makati | 180000.00 |
+|          18 | Robert     | Castillo  | Manila | 110000.00 |
+|           1 | Ana        | Cruz      | Manila | 105000.00 |
+|           9 | Ivy        | Ramos     | Manila | 100000.00 |
+|          12 | Leo        | Bautista  | Makati |  80000.00 |
++-------------+------------+-----------+--------+-----------+
++-------------+----------------+----------------+
+| city        | employee_count | average_salary |
++-------------+----------------+----------------+
+| Quezon City |              6 |       85833.33 |
+| Manila      |              6 |       74333.33 |
+| Pasig       |              5 |       76000.00 |
+| Makati      |              5 |       85000.00 |
+| Taguig      |              4 |       77500.00 |
++-------------+----------------+----------------+
++-----------------+--------------------+------------+-----------------+
+| full_name       | job_title          | hire_date  | completed_years |
++-----------------+--------------------+------------+-----------------+
+| Henry Ong       | Sales Manager      | 2018-04-25 |               8 |
+| Ivy Ramos       | HR Manager         | 2019-08-14 |               7 |
+| Robert Castillo | Operations Manager | 2019-10-30 |               6 |
+| Thomas Yu       | Marketing Manager  | 2020-08-03 |               6 |
+| Ella Tan        | DevOps Manager     | 2020-11-05 |               5 |
+| Grace Lee       | Finance Manager    | 2022-09-12 |               4 |
++-----------------+--------------------+------------+-----------------+
++------------------+--------------+
+| employee_id_text | salary_whole |
++------------------+--------------+
+| 1                |       105000 |
+| 2                |       115000 |
+| 3                |        60000 |
+| 4                |        45000 |
+| 5                |       180000 |
+| 6                |        35000 |
+| 7                |       120000 |
+| 8                |       105000 |
+| 9                |       100000 |
+| 10               |        55000 |
++------------------+--------------+
++-----------------+---------------+------------------+--------------------+
+| full_name       | gross_monthly | estimated_annual | monthly_after_5pct |
++-----------------+---------------+------------------+--------------------+
+| Ella Tan        |     180000.00 |       2160000.00 |          189000.00 |
+| Daniel Soriano  |     130000.00 |       1560000.00 |          136500.00 |
+| Olivia Navarro  |     125000.00 |       1500000.00 |          131250.00 |
+| Grace Lee       |     120000.00 |       1440000.00 |          126000.00 |
+| Ben Santos      |     115000.00 |       1380000.00 |          120750.00 |
+| Robert Castillo |     110000.00 |       1320000.00 |          115500.00 |
+| Henry Ong       |     105000.00 |       1260000.00 |          110250.00 |
+| Ana Cruz        |     105000.00 |       1260000.00 |          110250.00 |
+| Ivy Ramos       |     100000.00 |       1200000.00 |          105000.00 |
+| Thomas Yu       |     100000.00 |       1200000.00 |          105000.00 |
++-----------------+---------------+------------------+--------------------+
++-------------------+-------------------+-------------------------+
+| full_name         | employment_status | status_label            |
++-------------------+-------------------+-------------------------+
+| Ana Cruz          | Active            | Active Staff            |
+| Angela Dominguez  | Active            | Active Staff            |
+| Ben Santos        | Active            | Active Staff            |
+| Camille Padilla   | Active            | Active Staff            |
+| Daniel Soriano    | Active            | Active Staff            |
+| David Lim         | Active            | Active Staff            |
+| Ella Tan          | Active            | Active Staff            |
+| Grace Lee         | Active            | Active Staff            |
+| Henry Ong         | Active            | Active Staff            |
+| Ivy Ramos         | Active            | Active Staff            |
+| Karen Mendoza     | Active            | Active Staff            |
+| Leo Bautista      | Active            | Active Staff            |
+| Maria Villanueva  | Active            | Active Staff            |
+| Nathan Chua       | Active            | Active Staff            |
+| Paul Aquino       | Active            | Active Staff            |
+| Queenie Dela Cruz | Active            | Active Staff            |
+| Robert Castillo   | Active            | Active Staff            |
+| Thomas Yu         | Active            | Active Staff            |
+| Ursula Delgado    | Active            | Active Staff            |
+| Victor Salazar    | Active            | Active Staff            |
+| Wendy Co          | Active            | Active Staff            |
+| Yvonne Sy         | Active            | Active Staff            |
+| Zachary Go        | Active            | Active Staff            |
+| Brian Velasco     | Inactive          | Former Staff            |
+| Fred Garcia       | Inactive          | Former Staff            |
+| Sophia Torres     | Inactive          | Former Staff            |
+| Carla Reyes       | On Leave          | Temporarily Unavailable |
+| John Flores       | On Leave          | Temporarily Unavailable |
+| Olivia Navarro    | On Leave          | Temporarily Unavailable |
+| Xavier Mercado    | On Leave          | Temporarily Unavailable |
++-------------------+-------------------+-------------------------+
++------------+-------------+
+| department | city        |
++------------+-------------+
+| Finance    | Davao City  |
+| Finance    | Makati      |
+| Finance    | Pasig       |
+| Finance    | Quezon City |
+| Finance    | Taguig      |
+| HR         | Makati      |
+| HR         | Manila      |
+| HR         | Pasig       |
+| HR         | Quezon City |
+| IT         | Cebu City   |
+| IT         | Makati      |
+| IT         | Manila      |
+| IT         | Pasig       |
+| IT         | Quezon City |
+| IT         | Taguig      |
+| Marketing  | Makati      |
+| Marketing  | Manila      |
+| Marketing  | Quezon City |
+| Operations | Manila      |
+| Operations | Pasig       |
+| Operations | Quezon City |
+| Operations | Taguig      |
+| Sales      | Davao City  |
+| Sales      | Manila      |
+| Sales      | Pasig       |
+| Sales      | Taguig      |
++------------+-------------+
++------------+-------------------+----------------------+
+| total_rows | rows_with_manager | distinct_departments |
++------------+-------------------+----------------------+
+|         30 |                24 |                    6 |
++------------+-------------------+----------------------+
++-------------------+--------------------+-----------------+
+| full_name         | employee_label     | name_characters |
++-------------------+--------------------+-----------------+
+| Queenie Dela Cruz | DELA CRUZ, QUEENIE |              17 |
+| Angela Dominguez  | DOMINGUEZ, ANGELA  |              16 |
+| Maria Villanueva  | VILLANUEVA, MARIA  |              16 |
+| Camille Padilla   | PADILLA, CAMILLE   |              15 |
+| Robert Castillo   | CASTILLO, ROBERT   |              15 |
+| Ursula Delgado    | DELGADO, URSULA    |              14 |
+| Olivia Navarro    | NAVARRO, OLIVIA    |              14 |
+| Daniel Soriano    | SORIANO, DANIEL    |              14 |
+| Xavier Mercado    | MERCADO, XAVIER    |              14 |
+| Victor Salazar    | SALAZAR, VICTOR    |              14 |
++-------------------+--------------------+-----------------+
++-------------+------------+-----------+--------------------+
+| employee_id | first_name | last_name | job_title          |
++-------------+------------+-----------+--------------------+
+|           3 | Carla      | Reyes     | Accountant         |
+|           7 | Grace      | Lee       | Finance Manager    |
+|          12 | Leo        | Bautista  | Senior Accountant  |
+|          19 | Sophia     | Torres    | Payroll Specialist |
+|          23 | Wendy      | Co        | Financial Analyst  |
+|          28 | Brian      | Velasco   | Auditor            |
++-------------+------------+-----------+--------------------+
++------------+-----------+----------+-------------------+
+| first_name | last_name | salary   | employment_status |
++------------+-----------+----------+-------------------+
+| Carla      | Reyes     | 60000.00 | On Leave          |
+| Paul       | Aquino    | 60000.00 | Active            |
+| Victor     | Salazar   | 65000.00 | Active            |
+| Wendy      | Co        | 65000.00 | Active            |
+| Angela     | Dominguez | 70000.00 | Active            |
+| Karen      | Mendoza   | 75000.00 | Active            |
+| Leo        | Bautista  | 80000.00 | Active            |
+| Ursula     | Delgado   | 80000.00 | Active            |
++------------+-----------+----------+-------------------+
++-----------------+----------------+---------------+---------------+--------------------+
+| full_name       | monthly_salary | monthly_bonus | annual_salary | monthly_plus_bonus |
++-----------------+----------------+---------------+---------------+--------------------+
+| Ella Tan        |      180000.00 |      12600.00 |    2160000.00 |          192600.00 |
+| Daniel Soriano  |      130000.00 |       9100.00 |    1560000.00 |          139100.00 |
+| Olivia Navarro  |      125000.00 |       8750.00 |    1500000.00 |          133750.00 |
+| Grace Lee       |      120000.00 |       8400.00 |    1440000.00 |          128400.00 |
+| Ben Santos      |      115000.00 |       8050.00 |    1380000.00 |          123050.00 |
+| Robert Castillo |      110000.00 |       7700.00 |    1320000.00 |          117700.00 |
+| Henry Ong       |      105000.00 |       7350.00 |    1260000.00 |          112350.00 |
+| Ana Cruz        |      105000.00 |       7350.00 |    1260000.00 |          112350.00 |
+| Ivy Ramos       |      100000.00 |       7000.00 |    1200000.00 |          107000.00 |
+| Thomas Yu       |      100000.00 |       7000.00 |    1200000.00 |          107000.00 |
++-----------------+----------------+---------------+---------------+--------------------+
++------------+-----------+------------+-------------+
+| first_name | last_name | department | city        |
++------------+-----------+------------+-------------+
+| Wendy      | Co        | Finance    | Quezon City |
+| Grace      | Lee       | Finance    | Taguig      |
+| Ursula     | Delgado   | IT         | Cebu City   |
+| Angela     | Dominguez | IT         | Cebu City   |
+| Ana        | Cruz      | IT         | Manila      |
+| Ben        | Santos    | IT         | Quezon City |
+| Karen      | Mendoza   | IT         | Taguig      |
++------------+-----------+------------+-------------+
++------------+-----------+--------------------+
+| first_name | last_name | job_title          |
++------------+-----------+--------------------+
+| Ella       | Tan       | DevOps Manager     |
+| Grace      | Lee       | Finance Manager    |
+| Henry      | Ong       | Sales Manager      |
+| Ivy        | Ramos     | HR Manager         |
+| Robert     | Castillo  | Operations Manager |
+| Thomas     | Yu        | Marketing Manager  |
++------------+-----------+--------------------+
++------------+------------+
+| first_name | last_name  |
++------------+------------+
+| Carla      | Reyes      |
+| David      | Lim        |
+| Karen      | Mendoza    |
+| Maria      | Villanueva |
+| Nathan     | Chua       |
+| Paul       | Aquino     |
+| Xavier     | Mercado    |
+| Zachary    | Go         |
+| Camille    | Padilla    |
+| Daniel     | Soriano    |
++------------+------------+
++-----------------+----------------+---------------+
+| full_name       | monthly_salary | annual_salary |
++-----------------+----------------+---------------+
+| Ella Tan        |      180000.00 |    2160000.00 |
+| Daniel Soriano  |      130000.00 |    1560000.00 |
+| Olivia Navarro  |      125000.00 |    1500000.00 |
+| Grace Lee       |      120000.00 |    1440000.00 |
+| Ben Santos      |      115000.00 |    1380000.00 |
+| Robert Castillo |      110000.00 |    1320000.00 |
+| Henry Ong       |      105000.00 |    1260000.00 |
+| Ana Cruz        |      105000.00 |    1260000.00 |
+| Ivy Ramos       |      100000.00 |    1200000.00 |
+| Thomas Yu       |      100000.00 |    1200000.00 |
++-----------------+----------------+---------------+
++-------------+------------+-----------+--------------------+
+| employee_id | first_name | last_name | job_title          |
++-------------+------------+-----------+--------------------+
+|           5 | Ella       | Tan       | DevOps Manager     |
+|           7 | Grace      | Lee       | Finance Manager    |
+|           8 | Henry      | Ong       | Sales Manager      |
+|           9 | Ivy        | Ramos     | HR Manager         |
+|          18 | Robert     | Castillo  | Operations Manager |
+|          20 | Thomas     | Yu        | Marketing Manager  |
++-------------+------------+-----------+--------------------+
++--------------------------+
+| employees_with_a_manager |
++--------------------------+
+|                       24 |
++--------------------------+
