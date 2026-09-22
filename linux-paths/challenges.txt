@@ -1,0 +1,57 @@
+# Home directory is shown as ~ throughout this transcript.
+
+$ pwd
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart
+
+# 1. Project Beta by relative path
+$ cd departments/engineering/projects/beta && pwd && cat README.txt
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/engineering/projects/beta
+Project Beta
+Location: cloudmart/departments/engineering/projects/beta
+
+# 2. HR policies from Beta, relative
+$ cd ../../../hr/policies && pwd && ls
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/hr/policies
+conduct.txt
+leave.txt
+
+# 3. 2025 finance report, absolute
+$ cd ~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/finance/reports/2025 && pwd && cat q4.txt
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/finance/reports/2025
+Q4 2025 report
+Location: cloudmart/departments/finance/reports/2025
+
+# 4. 2026 report from 2025, relative siblings
+$ cd ../2026 && pwd && ls
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/finance/reports/2026
+q1.txt
+q2.txt
+
+# 5. home and back
+$ cd ~ && pwd && cd - >/dev/null && pwd
+~
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/finance/reports/2026
+
+# 6. read alpha/notes.txt from base camp without cd
+$ cd ~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart && pwd && cat departments/engineering/projects/alpha/notes.txt
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart
+Alpha notes: ship the login page, then the dashboard.
+
+# 7. copy budget.txt into reports/2026, relative paths only
+$ cp departments/finance/budget.txt departments/finance/reports/2026/ && ls departments/finance/reports/2026
+budget.txt
+q1.txt
+q2.txt
+
+# 8. copy top-level README.txt to /tmp, absolute paths
+$ cp ~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/README.txt /tmp/cloudmart-readme.txt && cat /tmp/cloudmart-readme.txt
+Welcome to CloudMart HQ.
+You are at: cloudmart  (the top of the practice tree)
+From here you can reach every department below.
+
+# 10. climbing past root
+$ cd departments/engineering/projects/alpha && pwd
+~/restart_batch_29_and_30/03-navigating-linux-file-system/practice/cloudmart/departments/engineering/projects/alpha
+
+$ cd ../../../../../../../../../../../.. && pwd
+/
