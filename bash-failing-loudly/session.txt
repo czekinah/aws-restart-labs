@@ -1,0 +1,48 @@
+# topfiles.sh: one job, five distinct exit codes
+$ ./topfiles.sh /usr/bin 5
+      SIZE  PATH
+     190MB  /usr/bin/pandoc
+      99MB  /usr/bin/dockerd
+      46MB  /usr/bin/containerd
+      44MB  /usr/bin/docker
+      28MB  /usr/bin/x86_64-linux-gnu-lto-dump-13
+exit=0
+
+$ ./topfiles.sh
+usage: topfiles.sh <directory> [count]
+exit=2
+
+$ ./topfiles.sh /nope
+not a directory: /nope
+exit=3
+
+$ ./topfiles.sh /usr/bin 0
+count must be a positive integer: 0
+exit=4
+
+$ mkdir -p /tmp/empty-dir && ./topfiles.sh /tmp/empty-dir
+no regular files under /tmp/empty-dir
+exit=5
+
+# strict-mode-demo.sh: when bash stops and when it does not
+$ ./strict-mode-demo.sh
+--- 1. no strict mode
+ls: cannot access '/no/such/dir': No such file or directory
+reached the next line, COUNT=[0]
+script exit: 0
+
+--- 2. set -e only, no pipefail
+ls: cannot access '/no/such/dir': No such file or directory
+reached the next line, COUNT=[0]
+script exit: 0
+
+--- 3. set -euo pipefail
+ls: cannot access '/no/such/dir': No such file or directory
+script exit: 2
+
+--- 4. strict mode, but called inside an if
+ls: cannot access '/no/such/dir': No such file or directory
+reached the next line anyway, COUNT=[0]
+script exit: 0
+exit=0
+
