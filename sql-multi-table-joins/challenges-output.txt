@@ -1,0 +1,212 @@
++-------------+---------------+-----------------+
+| employee_id | employee_name | department_name |
++-------------+---------------+-----------------+
+|           6 | Liza Navarro  | Finance         |
+|           7 | Mark Bautista | Finance         |
+|           8 | Nina Flores   | Finance         |
+|           9 | Carlo Mendoza | Finance         |
++-------------+---------------+-----------------+
++-----------------+----------------------+----------------+
+| employee_name   | project_name         | project_status |
++-----------------+----------------------+----------------+
+| Aira Domingo    | Inventory Automation | Active         |
+| Allan De Leon   | CRM Upgrade          | Active         |
+| Allan De Leon   | Customer Analytics   | Active         |
+| Ana Cruz        | Cloud Migration      | Active         |
+| Camille Diaz    | Customer Analytics   | Active         |
+| Carla Reyes     | Disaster Recovery    | Active         |
+| Carla Reyes     | Cloud Migration      | Active         |
+| Ivy Morales     | CRM Upgrade          | Active         |
+| Jessa Villareal | Inventory Automation | Active         |
+| Kevin Ong       | Disaster Recovery    | Active         |
+| Kevin Ong       | Cloud Migration      | Active         |
+| Liza Navarro    | Data Warehouse       | Active         |
+| Mark Bautista   | Data Warehouse       | Active         |
+| Maya Rodriguez  | Customer Analytics   | Active         |
+| Miguel Santos   | Cloud Migration      | Active         |
+| Nina Flores     | Data Warehouse       | Active         |
+| Noel Perez      | Data Warehouse       | Active         |
+| Omar Salazar    | Inventory Automation | Active         |
+| Paolo Garcia    | Disaster Recovery    | Active         |
+| Paolo Garcia    | Cloud Migration      | Active         |
+| Ramon Torres    | CRM Upgrade          | Active         |
+| Sofia Castillo  | CRM Upgrade          | Active         |
+| Sofia Castillo  | Customer Analytics   | Active         |
+| Trisha Gonzales | Inventory Automation | Active         |
++-----------------+----------------------+----------------+
++---------------+-----------------+----------------------+-------------------------+----------------+
+| employee_name | department_name | project_name         | project_role            | hours_per_week |
++---------------+-----------------+----------------------+-------------------------+----------------+
+| Ana Cruz      | Engineering     | Cloud Migration      | Project Sponsor         |            5.0 |
+| Carla Reyes   | Engineering     | Disaster Recovery    | Infrastructure Engineer |           12.0 |
+| Carla Reyes   | Engineering     | Cloud Migration      | Systems Engineer        |           15.0 |
+| Kevin Ong     | Engineering     | Disaster Recovery    | Database Recovery Lead  |           12.0 |
+| Kevin Ong     | Engineering     | Cloud Migration      | Database Lead           |           15.0 |
+| Miguel Santos | Engineering     | Cloud Migration      | Cloud Lead              |           20.0 |
+| Paolo Garcia  | Engineering     | Disaster Recovery    | Recovery Automation     |           10.0 |
+| Paolo Garcia  | Engineering     | Cloud Migration      | Automation Engineer     |           20.0 |
+| Liza Navarro  | Finance         | Data Warehouse       | Project Sponsor         |            4.0 |
+| Mark Bautista | Finance         | Vendor Consolidation | Finance Reviewer        |            5.0 |
+| Mark Bautista | Finance         | Data Warehouse       | Finance Data Owner      |           12.0 |
+| Nina Flores   | Finance         | Data Warehouse       | Financial Analyst       |           15.0 |
++---------------+-----------------+----------------------+-------------------------+----------------+
++------------+-------------------------+-----------------+
+| project_id | project_name            | assigned_people |
++------------+-------------------------+-----------------+
+|        107 | Compliance Review       |               0 |
+|        111 | Enterprise Architecture |               0 |
+|        103 | Hiring Portal           |               3 |
+|        109 | Disaster Recovery       |               3 |
+|        110 | Vendor Consolidation    |               3 |
+|        102 | Data Warehouse          |               4 |
+|        104 | CRM Upgrade             |               4 |
+|        105 | Inventory Automation    |               4 |
+|        106 | AI Prototype            |               4 |
+|        108 | Customer Analytics      |               4 |
+|        101 | Cloud Migration         |               5 |
++------------+-------------------------+-----------------+
++------------+-------------------------+-----------------+
+| project_id | project_name            | assigned_people |
++------------+-------------------------+-----------------+
+|        107 | Compliance Review       |               0 |
+|        111 | Enterprise Architecture |               0 |
+|        103 | Hiring Portal           |               3 |
+|        109 | Disaster Recovery       |               3 |
+|        110 | Vendor Consolidation    |               3 |
+|        102 | Data Warehouse          |               4 |
+|        104 | CRM Upgrade             |               4 |
+|        105 | Inventory Automation    |               4 |
+|        106 | AI Prototype            |               4 |
+|        108 | Customer Analytics      |               4 |
+|        101 | Cloud Migration         |               5 |
++------------+-------------------------+-----------------+
++-----------------+---------------+
+| department_name | employee_name |
++-----------------+---------------+
+| NULL            | Pia Alonzo    |
+| Engineering     | Ana Cruz      |
+| Engineering     | Carla Reyes   |
+| Engineering     | John Lim      |
+| Engineering     | Kevin Ong     |
+| Engineering     | Miguel Santos |
+| Engineering     | Paolo Garcia  |
+| Finance         | Carlo Mendoza |
+| Finance         | Liza Navarro  |
+| Finance         | Mark Bautista |
+| Finance         | Nina Flores   |
+| Human Resources | Bea Ramos     |
++-----------------+---------------+
++-------------+
+| city        |
++-------------+
+| Bacolod     |
+| Baguio      |
+| Caloocan    |
+| Cebu City   |
+| Davao City  |
+| Iloilo City |
+| Makati      |
+| Manila      |
+| Pasig       |
+| Quezon City |
+| Taguig      |
++-------------+
++-------------+----------------+
+| city        | worker_records |
++-------------+----------------+
+| Manila      |              7 |
+| Makati      |              6 |
+| Pasig       |              5 |
+| Taguig      |              5 |
+| Cebu City   |              4 |
+| Quezon City |              4 |
+| Baguio      |              2 |
+| Davao City  |              2 |
+| Bacolod     |              1 |
+| Caloocan    |              1 |
+| Iloilo City |              1 |
++-------------+----------------+
++-----------+
+| city      |
++-----------+
+| Baguio    |
+| Cebu City |
+| Makati    |
+| Manila    |
+| Pasig     |
+| Taguig    |
++-----------+
++-------------+
+| city        |
++-------------+
+| Bacolod     |
+| Iloilo City |
++-------------+
++---------------+----------------------+
+| employee_name | job_title            |
++---------------+----------------------+
+| Carlo Mendoza | Payroll Specialist   |
+| John Lim      | Junior Developer     |
+| Leo Fernandez | Sales Representative |
+| Pia Alonzo    | Business Consultant  |
+| Rina Mercado  | Learning Specialist  |
++---------------+----------------------+
++---------------+-----------------+
+| department_id | department_name |
++---------------+-----------------+
+|             7 | Legal           |
++---------------+-----------------+
++-------------------------+----------------+------------------+
+| project_name            | project_status | assignment_count |
++-------------------------+----------------+------------------+
+| Cloud Migration         | Active         |                5 |
+| CRM Upgrade             | Active         |                4 |
+| AI Prototype            | On Hold        |                4 |
+| Customer Analytics      | Active         |                4 |
+| Inventory Automation    | Active         |                4 |
+| Data Warehouse          | Active         |                4 |
+| Vendor Consolidation    | Planned        |                3 |
+| Disaster Recovery       | Active         |                3 |
+| Hiring Portal           | Completed      |                3 |
+| Compliance Review       | Planned        |                0 |
+| Enterprise Architecture | Planned        |                0 |
++-------------------------+----------------+------------------+
++-------------------------+-------------+---------------------+
+| project_name            | employee_id | project_role        |
++-------------------------+-------------+---------------------+
+| AI Prototype            |          23 | Data Science Lead   |
+| AI Prototype            |          24 | ML Engineer         |
+| Cloud Migration         |           2 | Cloud Lead          |
+| Cloud Migration         |           3 | Automation Engineer |
+| Compliance Review       |        NULL | NULL                |
+| CRM Upgrade             |        NULL | NULL                |
+| Customer Analytics      |        NULL | NULL                |
+| Data Warehouse          |        NULL | NULL                |
+| Disaster Recovery       |        NULL | NULL                |
+| Enterprise Architecture |        NULL | NULL                |
+| Hiring Portal           |        NULL | NULL                |
+| Inventory Automation    |        NULL | NULL                |
++-------------------------+-------------+---------------------+
++-----------------+-------------+---------------------+
+| project_name    | employee_id | project_role        |
++-----------------+-------------+---------------------+
+| AI Prototype    |          23 | Data Science Lead   |
+| AI Prototype    |          24 | ML Engineer         |
+| Cloud Migration |           2 | Cloud Lead          |
+| Cloud Migration |           3 | Automation Engineer |
++-----------------+-------------+---------------------+
++--------------+-----------------+
+| filter_in_on | filter_in_where |
++--------------+-----------------+
+|           13 |               4 |
++--------------+-----------------+
++---------------+--------------+-----------------------+
+| employee_rows | project_rows | possible_combinations |
++---------------+--------------+-----------------------+
+|            30 |           11 |                   330 |
++---------------+--------------+-----------------------+
++-------------------------------+
+| rows_without_a_join_condition |
++-------------------------------+
+|                           330 |
++-------------------------------+
