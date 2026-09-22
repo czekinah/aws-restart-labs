@@ -1,17 +1,16 @@
-# Conditional search and data organization in SQL
+# Conditional search and data organization
 
-Sixteen queries over a thirty-row employee table: filtering, grouping, wildcards,
-NULL handling, type conversion and derived columns.
+![rows](https://img.shields.io/badge/dataset-30_employees-0F3D1F?style=flat-square) ![queries](https://img.shields.io/badge/queries-16-43B02A?style=flat-square) ![engine](https://img.shields.io/badge/engine-MariaDB_10.11-F26B1D?style=flat-square)
 
-Queries: [`challenges.sql`](challenges.sql) ·
-Output: [`challenges-output.txt`](challenges-output.txt)
+Sixteen queries over one employee table: filtering, grouping, wildcards, NULLs, type conversion, derived columns.
+
+Queries: [`challenges.sql`](challenges.sql) · Output: [`challenges-output.txt`](challenges-output.txt)
 
 ## The decision that mattered
 
-`WHERE` and `HAVING` both filter, and putting a condition in the wrong one is the
-mistake that produces a plausible wrong answer rather than an error. `WHERE`
-filters rows before grouping. `HAVING` filters groups after aggregation, so it is
-the only place an aggregate can be tested:
+`WHERE` and `HAVING` both filter. Putting a condition in the wrong one produces a plausible wrong answer, not an error.
+
+`WHERE` runs before grouping. `HAVING` runs after, so it is the only place an aggregate can be tested.
 
 ```sql
 SELECT city, COUNT(*) AS employee_count, ROUND(AVG(salary), 2) AS average_salary
@@ -20,16 +19,16 @@ GROUP BY city
 HAVING COUNT(*) >= 3;
 ```
 
-`WHERE COUNT(*) >= 3` cannot work here, because at the point `WHERE` runs there
-are no groups yet to count.
+`WHERE COUNT(*) >= 3` cannot work here. At the point `WHERE` runs there are no groups yet to count.
 
-The same care applies to NULL. A missing manager is not a value, so it fails every
-comparison including `= NULL`. The test is `IS NULL`, and getting this wrong
-returns zero rows with no error to explain why.
+> [!IMPORTANT]
+> A missing manager is not a value, so it fails every comparison including `= NULL`. The test is `IS NULL`. Get it wrong and you get zero rows with nothing to explain why.
 
-## Useful results
+<details>
+<summary><b>You: anything interesting in the results</b></summary>
 
-- Six cities, five of them with three or more employees
-- Six job titles containing `Manager`, longest tenure eight completed years
-- `CASE` mapping the `employment_status` enum to labels a non-technical reader
-  can act on: Active Staff, Temporarily Unavailable, Former Staff
+<br>
+
+Six cities, five with three or more employees. Six job titles containing `Manager`, longest tenure eight completed years. And a `CASE` that maps the `employment_status` enum to labels a non-technical reader can act on: Active Staff, Temporarily Unavailable, Former Staff.
+
+</details>
