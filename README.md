@@ -1,10 +1,18 @@
-# AWS hands-on labs
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+  <img src="assets/banner-light.svg" alt="AWS re/Start Labs. Czekinah Tolentino, cohort PHMAN29, Edukasyon.ph." width="100%">
+</picture>
 
-![program](https://img.shields.io/badge/program-AWS_re%2FStart-0F3D1F?style=flat-square) ![labs](https://img.shields.io/badge/labs-6-43B02A?style=flat-square) ![focus](https://img.shields.io/badge/focus-RDS_·_SQL_·_Linux-F26B1D?style=flat-square)
+# AWS re/Start labs
+
+![program](https://img.shields.io/badge/program-AWS_re%2FStart-232F3E?style=flat-square) ![partner](https://img.shields.io/badge/partner-Edukasyon.ph-19A29A?style=flat-square) ![labs](https://img.shields.io/badge/labs-43_completed-2E8B2E?style=flat-square) ![deep_dives](https://img.shields.io/badge/deep_dives-6-FF9900?style=flat-square)
 
 What I built, what broke, and the one decision in each lab that was worth writing down.
 
-## Labs
+## Deep dives
+
+Six pieces of work written up properly, with the commands, the transcripts and the failures.
 
 | Lab | The thing worth knowing | Folder |
 |---|---|---|
@@ -15,7 +23,18 @@ What I built, what broke, and the one decision in each lab that was worth writin
 | curl and wget | `curl` exits 0 on a 404 unless you pass `--fail` | [`curl-vs-wget/`](curl-vs-wget/) |
 | Linux paths | Scripts need absolute paths. Prompts do not | [`linux-paths/`](linux-paths/) |
 
-## How to read a folder
+## Coursework
+
+All 43 completed labs, grouped by track, in [`coursework/`](coursework/).
+
+| Track | Labs | Track | Labs |
+|---|---|---|---|
+| [Linux](coursework/linux/) | 15 | [Security](coursework/security/) | 6 |
+| [Databases](coursework/databases/) | 9 | [Python and automation](coursework/python-and-automation/) | 3 |
+| [Networking](coursework/networking/) | 7 | [Cloud foundations](coursework/cloud-foundations/) | 2 |
+| | | [Systems operations](coursework/systems-operations/) | 1 |
+
+## How to read a deep dive
 
 Four parts every time: what I built, the decision that mattered, the evidence, what broke. SQL and transcripts are committed as files rather than pasted into code blocks, so you can read them or rerun them.
 
@@ -24,11 +43,11 @@ Four parts every time: what I built, the decision that mattered, the evidence, w
 
 <br>
 
-Because the failures are the part that took time. Three of these labs ran clean and taught me nothing I could not have read. The other three broke in ways the brief did not mention, and those are the entries I would actually bring to an interview.
+Because the failures are the part that took time. Some of these labs ran clean and taught me nothing I could not have read. The others broke in ways the brief did not mention, and those are the entries I would actually bring to an interview.
 
 </details>
 
 > [!NOTE]
 > No credentials, key files or account numbers here. See [`.gitignore`](.gitignore).
 
-Lab briefs come from [jjrs07/restart_batch_29_and_30](https://github.com/jjrs07/restart_batch_29_and_30). The work is mine.
+Delivered through the AWS re/Start programme with [Edukasyon.ph](https://www.edukasyon.ph/aws-re-start). Some lab briefs come from [jjrs07/restart_batch_29_and_30](https://github.com/jjrs07/restart_batch_29_and_30). The work is mine.
