@@ -41,8 +41,16 @@ The final query is an inner join because only students in both tables actually p
 
 ## Evidence
 
-Screenshots pending: `1.png` to `7.png`, one per SQL block.
+The build settings, the schema and the reasoning are above. Terminal captures for the
+seven SQL blocks are not here yet, for the reason below.
 
 ## What broke
 
-Not written yet.
+The lab session timer ran out before I captured the query output, and the RDS instance went
+with it. Everything in a timed sandbox is ephemeral, including the thing you were about to
+take a screenshot of.
+
+The lesson is about sequencing rather than AWS. Capture evidence as each step passes instead
+of collecting it at the end, because the end is exactly when the environment disappears.
+Rebuilding this is a rerun of Task 1, not new work: the settings table above is the full
+specification.
