@@ -1,0 +1,81 @@
+# Home directory is shown as ~ throughout this transcript.
+
+# The lab downloads the AWS CLI installer. This host's egress policy returns 403 for
+# awscli.amazonaws.com, so the same comparison runs against a reachable archive.
+
+$ curl -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscliv2.zip 2>&1 | tail -1
+curl: (56) CONNECT tunnel failed, response 403
+
+# Versions
+$ curl --version | head -1
+curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.10
+
+$ wget --version | head -1
+GNU Wget 1.21.4 built on linux-gnu.
+
+# Demo 1: download with curl
+$ curl -L "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz" -o with-curl.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  108k  100  108k    0     0  1196k      0 --:--:-- --:--:-- --:--:-- 1202k
+
+$ ls -lh with-curl.tar.gz
+-rw-r--r-- 1 root root 109K Sep 22 14:11 with-curl.tar.gz
+
+# Demo 2: same file with wget
+$ wget "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz" -O with-wget.tar.gz
+--2026-09-22 14:11:18--  https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz
+Resolving files.pythonhosted.org (files.pythonhosted.org)... 151.101.64.223, 151.101.192.223, 151.101.128.223, ...
+Connecting to files.pythonhosted.org (files.pythonhosted.org)|151.101.64.223|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 110794 (108K) [application/octet-stream]
+Saving to: 'with-wget.tar.gz'
+
+     0K .......... .......... .......... .......... .......... 46%  216M 0s
+    50K .......... .......... .......... .......... .......... 92%  145M 0s
+   100K ........                                              100% 15.3T=0.001s
+
+2026-09-22 14:11:18 (188 MB/s) - 'with-wget.tar.gz' saved [110794/110794]
+
+
+$ ls -lh with-wget.tar.gz
+-rw-r--r-- 1 root root 109K May 22  2023 with-wget.tar.gz
+
+# Same bytes from both tools
+$ sha256sum with-curl.tar.gz with-wget.tar.gz
+942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1  with-curl.tar.gz
+942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1  with-wget.tar.gz
+
+# Where curl wins: it prints to stdout and reports on the transfer itself
+$ curl --silent -o /dev/null -w 'status=%{http_code} bytes=%{size_download} time=%{time_total}s\n' "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+status=200 bytes=110794 time=0.059494s
+
+# Where curl wins: --fail turns an HTTP error into a non-zero exit code
+$ curl --fail --silent --show-error https://pypi.org/no-such-file.tar.gz; echo "curl exit code: $?"
+curl: (22) The requested URL returned error: 404
+curl exit code: 22
+
+$ wget -q https://pypi.org/no-such-file.tar.gz; echo "wget exit code: $?"
+wget exit code: 8
+
+# Where wget wins: -c resumes a partial file instead of starting over
+$ head -c 30000 with-curl.tar.gz > partial.tar.gz && ls -l partial.tar.gz
+-rw-r--r-- 1 root root 30000 Sep 22 14:11 partial.tar.gz
+
+$ wget -c "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz" -O partial.tar.gz 2>&1 | tail -4
+   100K ........                                              100% 15.3T=0.002s
+
+2026-09-22 14:11:19 (41.2 MB/s) - 'partial.tar.gz' saved [110794/110794]
+
+
+$ ls -l partial.tar.gz && sha256sum partial.tar.gz with-curl.tar.gz
+-rw-r--r-- 1 root root 110794 May 22  2023 partial.tar.gz
+942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1  partial.tar.gz
+942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1  with-curl.tar.gz
+
+# Clean up
+$ cd ~ && rm -rf ~/cli-download && echo "removed ~/cli-download"
+removed ~/cli-download
+
