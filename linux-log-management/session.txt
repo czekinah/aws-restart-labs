@@ -1,0 +1,83 @@
+# Home directory is shown as ~ throughout this transcript.
+
+# Part 1: generate log entries
+$ ./scripts/generate-log.sh
+Log entry written to ~/log-demo/app.log
+Latest five entries:
+2026-09-22 14:10:33,INFO,Application health check successful
+
+$ ./scripts/generate-log.sh ERROR "Database connection failed"
+Log entry written to ~/log-demo/app.log
+Latest five entries:
+2026-09-22 14:10:33,INFO,Application health check successful
+2026-09-22 14:10:33,ERROR,Database connection failed
+
+# Part 2: four ways to look at the same file
+$ ls -l $HOME/log-demo/app.log
+-rw-r--r-- 1 root root 114 Sep 22 14:10 ~/log-demo/app.log
+
+$ ls -lh $HOME/log-demo/app.log
+-rw-r--r-- 1 root root 114 Sep 22 14:10 ~/log-demo/app.log
+
+$ wc -c $HOME/log-demo/app.log
+114 ~/log-demo/app.log
+
+$ du -h $HOME/log-demo/app.log
+4.0K	~/log-demo/app.log
+
+# Part 3: bulk entries, then the growth estimate
+$ ./scripts/generate-sample-logs.sh 50
+Added 50 sample entries to ~/log-demo/app.log
+Latest five entries:
+2026-09-22 14:10:33,WARNING,High CPU utilization detected
+2026-09-22 14:10:33,ERROR,Database connection failed
+2026-09-22 14:10:33,ERROR,Application service unavailable
+2026-09-22 14:10:33,INFO,Application health check successful
+2026-09-22 14:10:33,INFO,Database connection successful
+
+$ ./scripts/calculate-log-size.sh
+Log file: ~/log-demo/app.log
+Total log entries: 52
+Exact file size: 3047 bytes
+Human-readable file size: 2.98 KiB
+Human-readable allocated disk usage: 4.0K
+Average bytes per log entry: 58.60
+
+Logging interval: every 5 minutes
+60 / 5 = 12 logs per hour
+12 * 24 = 288 logs per day
+24 * 60 / 5 = 288 logs per day
+
+Estimated size after 1 day: 16875 bytes (16.48 KiB)
+Estimated size after 30 days: 506250 bytes (494.38 KiB)
+Estimated size after 365 days: 6159375 bytes (6015.01 KiB)
+
+These are estimates: description lengths vary, so future entries may not match the current average.
+Binary units are used: 1 KiB = 1024 bytes.
+
+# Part 4: schedule it every five minutes
+$ echo '*/5 * * * * $HOME/restart_batch_29_and_30/04-linux-log-management/scripts/generate-log.sh' | crontab -
+
+$ crontab -l
+*/5 * * * * $HOME/restart_batch_29_and_30/04-linux-log-management/scripts/generate-log.sh
+
+# Part 5: retention. The shipped config hardcodes /home/ec2-user, so rewrite the path for this host.
+$ sed "s|/home/ec2-user|$HOME|" logrotate/app-log.conf > /tmp/app-log.conf && head -3 /tmp/app-log.conf
+~/log-demo/app.log {
+    # Rotate the active log once per day when logrotate is invoked.
+    daily
+
+$ logrotate -f -s /tmp/logrotate.state /tmp/app-log.conf && ls -l $HOME/log-demo/
+total 4
+-rw-r--r-- 1 root root 228 Sep 22 14:10 app.log.1.gz
+
+$ ls $HOME/log-demo/app.log
+ls: cannot access '~/log-demo/app.log': No such file or directory
+
+# Part 6: journald
+$ journalctl --disk-usage
+No journal files were found.
+Archived and active journals take up 0B in the file system.
+
+$ crontab -r
+
