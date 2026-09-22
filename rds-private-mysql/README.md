@@ -1,74 +1,48 @@
 # Private MySQL on RDS, reached from EC2
 
-A managed MySQL database that nothing outside the VPC can reach, queried from an
-EC2 Linux server, holding two related tables so a single join answers which
-re/Start students have passed the Cloud Practitioner exam.
+![engine](https://img.shields.io/badge/engine-MySQL_8-0F3D1F?style=flat-square) ![access](https://img.shields.io/badge/public_access-no-2E8B2E?style=flat-square) ![tables](https://img.shields.io/badge/tables-2_joined-F26B1D?style=flat-square)
 
-## Architecture
+A database nothing outside the VPC can reach, queried from an EC2 instance, with two tables that answer a question neither one answers alone.
 
 ```mermaid
 flowchart LR
-    U([SSH client]) -->|port 22| EC2[EC2 Linux server<br/>public subnet]
-    EC2 -->|MySQL 3306| RDS[(RDS MySQL: restart-db<br/>private subnets, no public access)]
+    U([SSH client]) -->|22| EC2[EC2 Linux server<br/>public subnet]
+    EC2 -->|3306| RDS[(restart-db<br/>private subnets)]
 ```
 
 ## What I built
 
 | Component | Setting that mattered |
 |---|---|
-| RDS instance `restart-db` | MySQL, Dev/Test, single instance with no standby, db.t3.micro, 20 GiB gp2 |
-| Network placement | Lab VPC, public access set to No |
-| DB subnet group | Spans both private subnets, so RDS has somewhere to place the instance and a failover target |
-| Security group | One inbound rule, MySQL/Aurora on 3306, sourced from the Linux server rather than an address range |
-| Schema | `RESTART` and `CLOUD_PRACTITIONER`, related on `student_id` |
-
-## The decision that mattered
-
-The security group rule points at the Linux server's security group, not at a
-CIDR block. A CIDR rule would keep working if the server were replaced with a
-different address, which sounds convenient and is exactly the problem: it opens
-the database to anything that later lands in that range. Sourcing from a security
-group ties access to identity instead of address, so the rule stays correct when
-the network changes and stays narrow when it does not.
-
-The second choice is the schema. `CLOUD_PRACTITIONER` carries only a student ID
-and a date. Everything else about the student already lives in `RESTART`, and
-duplicating it would let the two tables disagree about the same person. Because
-`student_id` is the primary key on `RESTART`, the join has one unambiguous match
-on each side and cannot silently multiply rows.
-
-The final query uses an inner join because only students present in both tables
-actually sat and passed. A left join would keep the other five and return `NULL`
-for the date, which is the version to run when the question is who has not
-certified yet.
-
-## Commands
-
-```bash
-chmod 400 labsuser.pem
-ssh -i labsuser.pem ec2-user@<linux-server-public-ip>
-
-sudo yum install mariadb -y
-mysql -h <rds-endpoint> -u <master-user> -p
-```
+| RDS instance | MySQL, Dev/Test, single instance, db.t3.micro, 20 GiB gp2 |
+| Placement | Lab VPC, public access **No** |
+| Subnet group | Both private subnets, so RDS has a failover target |
+| Security group | One rule: 3306, sourced from the server's security group |
+| Schema | `RESTART` and `CLOUD_PRACTITIONER`, joined on `student_id` |
 
 Schema and queries: [`schema.sql`](schema.sql).
 
-Dates are stored as `DATETIME` rather than text, so they sort and compare without
-any string handling.
+## The decision that mattered
+
+The inbound rule points at the Linux server's security group, not a CIDR block.
+
+A CIDR rule keeps working when the server is replaced with a different address. That sounds like a feature. It is the bug: the rule now admits anything that later lands in that range. Sourcing from a security group ties access to identity instead of address, so it stays correct when the network changes and stays narrow when it does not.
+
+<details>
+<summary><b>You: and the schema</b></summary>
+
+<br>
+
+`CLOUD_PRACTITIONER` carries a student ID and a date, nothing else. Every other detail already lives in `RESTART`, and duplicating it lets the two tables disagree about the same person. `student_id` is the primary key on `RESTART`, so the join has one match per side and cannot multiply rows.
+
+The final query is an inner join because only students in both tables actually passed. A left join keeps the other five with a `NULL` date, which is the version to run when the question is who has **not** certified yet.
+
+</details>
 
 ## Evidence
 
-| Item | File |
-|---|---|
-| `RESTART` created, `DESCRIBE` output | `1.png` |
-| Ten student rows inserted | `2.png` |
-| `SELECT * FROM RESTART` | `3.png` |
-| `CLOUD_PRACTITIONER` created | `4.png` |
-| Five certification rows inserted | `5.png` |
-| `SELECT * FROM CLOUD_PRACTITIONER` | `6.png` |
-| Inner join result | `7.png` |
+Screenshots pending: `1.png` to `7.png`, one per SQL block.
 
 ## What broke
 
-<The failure I hit, what the error said, and what fixed it.>
+Not written yet.
