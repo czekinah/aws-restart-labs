@@ -7,7 +7,7 @@ The instructor repository contains nine exercises. This table links the work alr
 | # | Exercise | Current portfolio evidence | Status / next checkpoint |
 |---|---|---|---|
 | 01 | On-prem vs cloud website | Related EC2 work, but no paired deployment of this exact app | Pending: run identical app in local Linux and EC2; capture both environment outputs |
-| 02 | S3 console walkthrough | Canvas storage, version recovery, and access-control work | Partial: verify this walkthrough's KMS, HTTPS-only policy, presigned URL, lifecycle, and cleanup checkpoints |
+| 02 | S3 console walkthrough | Canvas storage, version recovery, and access-control work | Blocked in course sandbox: bucket creation in the required Ohio region explicitly denied; exact walkthrough remains incomplete |
 | 03 | Linux file-system navigation | [Ten path challenges](../linux-paths/) and transcript | Existing exercise work documented |
 | 04 | Linux log management | [Log sizing, scheduling, retention](../linux-log-management/) and transcript | Existing exercise work documented; preserve the observed rotation failure |
 | 05 | curl vs wget | [Download comparison](../curl-vs-wget/) and transcript | Adapted exercise documented: allowed archive used after AWS-installer download was blocked |
@@ -17,6 +17,12 @@ The instructor repository contains nine exercises. This table links the work alr
 | 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and Canvas migration results | Partial: run Profile Manager CRUD checks and prove persistence after EC2 replacement |
 
 ## Deployment evidence still needed
+
+### Sandbox check: 15 October 2026
+
+The course sandbox opened successfully through Canvas. Its console rejected `s3:CreateBucket` in `us-east-2` (Ohio), the region required by exercise 02, with an explicit deny in a service control policy. No bucket was created. CloudShell was also unavailable under the supplied role.
+
+Next step: obtain the instructor's supported sandbox or approved region for this exercise. No role or policy changes were made to work around these restrictions. The HTTPS exercise still needs a controlled domain/subdomain and verified ACM availability; the local/cloud comparison still needs an actual local Linux environment.
 
 ### 01: Same app, two environments
 
