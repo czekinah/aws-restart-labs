@@ -1,6 +1,6 @@
 # Security
 
-![labs](https://img.shields.io/badge/labs-6-0F3D1F?style=flat-square)
+![labs](https://img.shields.io/badge/labs-8-0F3D1F?style=flat-square)
 
 Hardening the network, then the host, then the data, then watching all three.
 
@@ -12,6 +12,8 @@ Hardening the network, then the host, then the data, then watching all three.
 | 279 | Introduction to Identity and Access Management (IAM) | 1/1 |
 | 280 | Firewall Malware | 1/1 |
 | 281 | Monitor an EC2 Instance | 1/1 |
+| 186 | Monitoring Infrastructure | 1/1 |
+| 187 | Working with AWS CloudTrail | 1/1 |
 
 ## What this track covers
 
@@ -22,3 +24,7 @@ Hardening the network, then the host, then the data, then watching all three.
 
 > [!WARNING]
 > The pattern behind every lab here: identity, then network, then host, then data. Skipping straight to the firewall rule is how an over-permissive policy survives the review.
+
+## Later evidence
+
+Lab 186 added alarm, event, and configuration-monitoring exercises. Lab 187 included an investigation and cleanup of the supplied simulated attacker accounts. Its [challenge summary](../../challenges/#187-cloudtrail-investigation) keeps incident identifiers and private logs out of the public repository.

@@ -4,29 +4,31 @@
 
 A database nothing outside the VPC can reach, queried from an EC2 instance, with two tables that answer a question neither one answers alone.
 
+**Lab 162 complete: Canvas 1/1, 11 October 2026.** The later evidence rerun captured the seven required query screenshots before ending the sandbox.
+
 ```mermaid
 flowchart LR
     U([SSH client]) -->|22| EC2[EC2 Linux server<br/>public subnet]
-    EC2 -->|3306| RDS[(restart-db<br/>private subnets)]
+    EC2 -->|3306| RDS[(Private MySQL<br/>RDS)]
 ```
 
 ## What I built
 
 | Component | Setting that mattered |
 |---|---|
-| RDS instance | MySQL, Dev/Test, single instance, db.t3.micro, 20 GiB gp2 |
+| RDS instance | Verified rerun: MySQL 8.4.11, Single-AZ, db.t3.micro, 20 GiB gp2 |
 | Placement | Lab VPC, public access **No** |
-| Subnet group | Both private subnets, so RDS has a failover target |
+| Subnet group | Private database placement; multiple subnets do not by themselves enable Multi-AZ failover |
 | Security group | One rule: 3306, sourced from the server's security group |
-| Schema | `RESTART` and `CLOUD_PRACTITIONER`, joined on `student_id` |
+| Schema | `RESTART` and `CLOUD_PRACTITIONER`, joined on the student ID |
 
-Schema and queries: [`schema.sql`](schema.sql).
+Original schema notes: [`schema.sql`](schema.sql). The verified rerun used `StudentID`, `StudentName`, `RestartCity`, `GraduationDate`, and `CertificationDate`. Its exact commands and results, using generic sample student records, are in [`verified-query-session.txt`](verified-query-session.txt). The original notes are not the execution transcript.
 
 ## The decision that mattered
 
 The inbound rule points at the Linux server's security group, not a CIDR block.
 
-A CIDR rule keeps working when the server is replaced with a different address. That sounds like a feature. It is the bug: the rule now admits anything that later lands in that range. Sourcing from a security group ties access to identity instead of address, so it stays correct when the network changes and stays narrow when it does not.
+A broad CIDR can admit other hosts in the same address range. Referencing the application security group narrows the permitted source to network interfaces carrying that group. That is a network-membership control, not a replacement for database authentication.
 
 <details>
 <summary><b>You: and the schema</b></summary>
@@ -41,16 +43,14 @@ The final query is an inner join because only students in both tables actually p
 
 ## Evidence
 
-The build settings, the schema and the reasoning are above. Terminal captures for the
-seven SQL blocks are not here yet, for the reason below.
+The October 11 rerun verified 10 rows in `RESTART`, five in `CLOUD_PRACTITIONER`, and five matching rows in the final inner join. The database connection used certificate-verified TLS. The [saved query session](verified-query-session.txt) contains the actual commands and results.
+
+The separate private submission report includes all seven required query screenshots, RDS availability, and Canvas completion. Raw console screenshots are not published here because they contain account context. See the [challenge index](../challenges/#162-build-and-access-an-rds-server).
 
 ## What broke
 
-The lab session timer ran out before I captured the query output, and the RDS instance went
-with it. Everything in a timed sandbox is ephemeral, including the thing you were about to
-take a screenshot of.
+In the earlier session, the lab timer ran out before the query output was captured, and the RDS instance went with it. The October evidence rerun solved that gap rather than presenting reconstructed output as an original screenshot.
 
 The lesson is about sequencing rather than AWS. Capture evidence as each step passes instead
 of collecting it at the end, because the end is exactly when the environment disappears.
-Rebuilding this is a rerun of Task 1, not new work: the settings table above is the full
-specification.
+The successful rerun was submitted and the lab ended after verification. Its historical endpoint is not a maintained public demo.

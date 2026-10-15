@@ -1,6 +1,6 @@
 # Databases
 
-![labs](https://img.shields.io/badge/labs-9-0F3D1F?style=flat-square) ![engines](https://img.shields.io/badge/engines-MySQL_·_Aurora_·_DynamoDB-43B02A?style=flat-square)
+![labs](https://img.shields.io/badge/labs-11-0F3D1F?style=flat-square) ![engines](https://img.shields.io/badge/engines-MySQL_·_Aurora_·_DynamoDB-43B02A?style=flat-square)
 
 From `CREATE TABLE` to a managed engine with an application in front of it.
 
@@ -15,6 +15,8 @@ From `CREATE TABLE` to a managed engine with an application in front of it.
 | 160 | Build Your Database Server and Interact with Your DB Using an App | 1/1 |
 | 274 | Introduction to Amazon Aurora | 1/1 |
 | 275 | Introduction to Amazon DynamoDB | 1/1 |
+| 162 | [Challenge] Build and Access an RDS Server | 1/1 |
+| 179 | Migrate to Amazon RDS | 1/1 |
 
 ## What this track covers
 
@@ -27,4 +29,5 @@ From `CREATE TABLE` to a managed engine with an application in front of it.
 
 - [Conditional search and data organization](../../sql-conditional-search/) extends labs 271 and 273
 - [Joins, set operators, and two ways to lose rows quietly](../../sql-multi-table-joins/) extends lab 270
-- [Private MySQL on RDS, reached from EC2](../../rds-private-mysql/) is the challenge version of lab 160
+- [Private MySQL on RDS, reached from EC2](../../rds-private-mysql/) documents Lab 162, including the later evidence rerun
+- [Migration notes](../latest-lab-notes.md#179-migrate-to-amazon-rds) record the Lab 179 data and application checks

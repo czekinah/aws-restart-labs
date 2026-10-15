@@ -1,0 +1,70 @@
+lab_id,title,track,score,status,audit_date
+1,Sandbox Environment,cloud-foundations,1/1,Canvas complete,2026-10-13
+11,Introduction to Amazon EC2,cloud-foundations,1/1,Canvas complete,2026-10-13
+134,Evaluate a DevOps Tool,python-and-automation,1/1,Canvas complete,2026-10-13
+135,Explore the Value of Automation,python-and-automation,1/1,Canvas complete,2026-10-13
+141,[Challenge] Python Exercise,python-and-automation,1/1,Canvas complete,2026-10-13
+160,Build Your Database Server and Interact with Your DB Using an App,databases,1/1,Canvas complete,2026-10-13
+162,[Challenge] Build and Access an RDS Server,databases,1/1,Canvas complete,2026-10-13
+168,Install and Configure the AWS CLI,systems-operations,1/1,Canvas complete,2026-10-13
+169,Using AWS Systems Manager,systems-operations,1/1,Canvas complete,2026-10-13
+170,Create a Website on S3,systems-operations,1/1,Canvas complete,2026-10-13
+171,Creating Amazon EC2 Instances,systems-operations,1/1,Canvas complete,2026-10-13
+172,EC2 Instance Exercise,systems-operations,1/1,Canvas complete,2026-10-13
+173,Troubleshoot Create Instance,systems-operations,1/1,Canvas complete,2026-10-13
+174,Scale and Load Balance your Architecture,systems-operations,1/1,Canvas complete,2026-10-13
+175,Using Auto Scaling in AWS (Linux),systems-operations,1/1,Canvas complete,2026-10-13
+176,Route 53 Failover Routing,networking,1/1,Canvas complete,2026-10-13
+177,[Challenge] AWS Lambda Exercise,systems-operations,1/1,Canvas complete,2026-10-13
+178,Working with AWS Lambda,systems-operations,1/1,Canvas complete,2026-10-13
+179,Migrate to Amazon RDS,databases,1/1,Canvas complete,2026-10-13
+180,Configuring an Amazon VPC,networking,1/1,Canvas complete,2026-10-13
+181,Troubleshoot a VPC,networking,1/1,Canvas complete,2026-10-13
+182,Working with Amazon EBS,systems-operations,1/1,Canvas complete,2026-10-13
+183,Managing Storage,systems-operations,1/1,Canvas complete,2026-10-13
+184,[Challenge] S3 Exercise,systems-operations,1/1,Canvas complete,2026-10-13
+185,Work with Amazon S3,systems-operations,1/1,Canvas complete,2026-10-13
+186,Monitoring Infrastructure,security,1/1,Canvas complete,2026-10-13
+187,Working with AWS CloudTrail,security,1/1,Canvas complete,2026-10-13
+188,Managing Resources with Tagging,systems-operations,1/1,Canvas complete,2026-10-13
+189,Optimize Utilization,systems-operations,1/1,Canvas complete,2026-10-13
+190,Automating Deployments with AWS CloudFormation,systems-operations,1/1,Canvas complete,2026-10-13
+191,Troubleshooting AWS CloudFormation Deployments,systems-operations,1/1,Canvas complete,2026-10-13
+192,[Challenge] CloudFormation,systems-operations,1/1,Canvas complete,2026-10-13
+225,Introduction to Amazon Linux AMI,linux,1/1,Canvas complete,2026-10-13
+227,Linux Command Line,linux,1/1,Canvas complete,2026-10-13
+229,Users and Groups,linux,1/1,Canvas complete,2026-10-13
+231,Editing Files,linux,1/1,Canvas complete,2026-10-13
+233,Working with the File System,linux,1/1,Canvas complete,2026-10-13
+235,Working with Files,linux,1/1,Canvas complete,2026-10-13
+237,Managing File Permissions,linux,1/1,Canvas complete,2026-10-13
+239,Managing Processes,linux,1/1,Canvas complete,2026-10-13
+241,Managing Services and Monitoring,linux,1/1,Canvas complete,2026-10-13
+243,Software Management,linux,1/1,Canvas complete,2026-10-13
+245,Managing Log Files,linux,1/1,Canvas complete,2026-10-13
+247,Working with Commands,linux,1/1,Canvas complete,2026-10-13
+249,The Bash Shell,linux,1/1,Canvas complete,2026-10-13
+251,Bash Shell Scripts,linux,1/1,Canvas complete,2026-10-13
+253,[Challenge] Bash Shell Scripting,linux,1/1,Canvas complete,2026-10-13
+261,Public and Private IP addresses,networking,1/1,Canvas complete,2026-10-13
+262,Static and Dynamic IP addresses,networking,1/1,Canvas complete,2026-10-13
+263,Create Subnets in a VPC,networking,1/1,Canvas complete,2026-10-13
+264,Networking resources for a VPC,networking,1/1,Canvas complete,2026-10-13
+265,Internet Protocol Troubleshooting Commands,networking,1/1,Canvas complete,2026-10-13
+266,Troubleshooting a Network Issue,networking,1/1,Canvas complete,2026-10-13
+267,Build your VPC and Launch a Web Server,networking,1/1,Canvas complete,2026-10-13
+268,Database Table Operations,databases,1/1,Canvas complete,2026-10-13
+269,"Insert, Update, and Delete Data in a Database",databases,1/1,Canvas complete,2026-10-13
+270,Selecting Data from a Database,databases,1/1,Canvas complete,2026-10-13
+271,Performing a Conditional Search,databases,1/1,Canvas complete,2026-10-13
+272,Working with Functions,databases,1/1,Canvas complete,2026-10-13
+273,Organizing Data,databases,1/1,Canvas complete,2026-10-13
+274,Introduction to Amazon Aurora,databases,1/1,Canvas complete,2026-10-13
+275,Introduction to Amazon DynamoDB,databases,1/1,Canvas complete,2026-10-13
+276,Network Hardening,security,1/1,Canvas complete,2026-10-13
+277,Systems Hardening,security,1/1,Canvas complete,2026-10-13
+278,Data Protection,security,1/1,Canvas complete,2026-10-13
+279,Introduction to Identity and Access Management (IAM),security,1/1,Canvas complete,2026-10-13
+280,Firewall Malware,security,1/1,Canvas complete,2026-10-13
+281,Monitor an EC2 Instance,security,1/1,Canvas complete,2026-10-13
+316,SageMaker: Training a machine-learning model,machine-learning,1/1,Canvas complete,2026-10-13

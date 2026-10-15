@@ -1,38 +1,38 @@
 # Programme progress
 
-![labs](https://img.shields.io/badge/labs-43_completed-2E8B2E?style=flat-square) ![score](https://img.shields.io/badge/lab_score-1%2F1_each-43B02A?style=flat-square) ![kc](https://img.shields.io/badge/knowledge_checks-72_at_100%25-19A29A?style=flat-square) ![cohort](https://img.shields.io/badge/cohort-PHMAN29-0F3D1F?style=flat-square)
+![labs](https://img.shields.io/badge/labs-69%2F69-2E8B2E?style=flat-square) ![score](https://img.shields.io/badge/lab_score-100%25-43B02A?style=flat-square) ![kc](https://img.shields.io/badge/regular_KCs-83%2F83_submitted-19A29A?style=flat-square) ![cohort](https://img.shields.io/badge/cohort-PHMAN29-0F3D1F?style=flat-square)
 
-AWS re/Start, delivered with Edukasyon.ph. Every lab below was completed in a live AWS sandbox account and scored in Canvas. This page is the record.
+AWS re/Start, delivered with Edukasyon.ph. The tables below list the 69 scored Canvas lab rows. Some are cloud deployments; others are Linux, programming, database, or tool activities. They are not all hosted applications.
 
-## Where I am
+## Verified progress
 
-| Module | Labs | Knowledge checks | State |
-|---|---|---|---|
-| Sandbox Environment | 1/1 | | Complete |
-| Cloud Foundations | 1/1 | 12/12 | Complete |
-| Linux | 15/15 | 14/14 | Complete |
-| Networking | 7/7 | 7/7 | Complete |
-| Security | 6/6 | 17/17 | Complete |
-| Python Programming | 3/5 | 10/10 | In progress |
-| Databases | 9/13 | 11/11 | In progress |
-| AWS Architecture | | 1/1 | Complete |
-| Systems Operations | 1/1 | 1/1 | Complete |
+Last Canvas audit: **13 October 2026, 22:49 Manila**. Repository updated 15 October 2026.
 
-Totals: **43 labs at 1/1**, **72 knowledge checks at 100%**. Remaining modules are Servers, Scaling and Name Resolution, Serverless and Containers, AWS Database Services, AWS Networking Services, Storage and Archiving, Monitoring and Security, Managing Resource Consumption, Automated and Repeatable Deployments, and Machine Learning.
+| Record | Result |
+|---|---|
+| Scored labs | 69 submitted; 69/69 points (100%) |
+| Regular knowledge checks | 83 submitted; 8,280/8,300 points (99.76%) |
+| Exam/certification-preparation checks | 13 separate checks, not counted as completed |
+| Challenge documents | 11 individual PDFs prepared; instructor-thread upload not verified |
+
+The [verification record](verification.md) explains the source and exclusions. The [instructor tracker](../instructor-exercises/) covers the separate classroom repository. The CSV [lab register](lab-register.csv) is available for filtering.
 
 ## Tracks
 
 | Track | Labs | Folder |
 |---|---|---|
 | Linux | 15 | [`linux/`](linux/) |
-| Databases | 9 | [`databases/`](databases/) |
-| Networking | 7 | [`networking/`](networking/) |
-| Security | 6 | [`security/`](security/) |
+| Databases | 11 | [`databases/`](databases/) |
+| Networking | 10 | [`networking/`](networking/) |
+| Security | 8 | [`security/`](security/) |
 | Python and automation | 3 | [`python-and-automation/`](python-and-automation/) |
 | Cloud foundations | 2 | [`cloud-foundations/`](cloud-foundations/) |
-| Systems operations | 1 | [`systems-operations/`](systems-operations/) |
+| Systems operations | 19 | [`systems-operations/`](systems-operations/) |
+| Machine learning | 1 | [`machine-learning/`](machine-learning/) |
 
-Each folder lists its labs and the concepts that track teaches.
+Each folder lists its labs and the concepts that track teaches. These are portfolio groupings, not a claim about Canvas module boundaries. [Latest lab notes](latest-lab-notes.md) capture selected results without exposing private account details.
+
+Programming exercises such as the insulin and Caesar-cipher exercises are supporting practice. They are not counted again as extra scored lab rows in the 69-lab total.
 
 > [!NOTE]
-> This is the index of completed coursework. The written-up work, with scripts, transcripts and the failures, is in the deep dive folders at the repository root.
+> Canvas completion is not certification, instructor approval of a portfolio, or confirmation that a challenge PDF was uploaded to its submission thread.
