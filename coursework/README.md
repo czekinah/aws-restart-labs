@@ -6,16 +6,16 @@ AWS re/Start, delivered with Edukasyon.ph. The tables below list the 69 scored C
 
 ## Verified progress
 
-Last Canvas audit: **13 October 2026, 22:49 Manila**. Repository updated 15 October 2026.
+Labs and regular KCs audited **13 October 2026, 22:49 Manila**. Certification-preparation checks verified **15 October 2026**. This is a dated record, not a live integration.
 
 | Record | Result |
 |---|---|
 | Scored labs | 69 submitted; 69/69 points (100%) |
 | Regular knowledge checks | 83 submitted; 8,280/8,300 points (99.76%) |
-| Exam/certification-preparation checks | 13 separate checks, not counted as completed |
+| Exam/certification-preparation checks | 13/13 submitted: 11 at 100%, Scenario Strategy 77.77%, final Assessment 97.95% |
 | Challenge documents | 11 individual PDFs prepared; instructor-thread upload not verified |
 
-The [verification record](verification.md) explains the source and exclusions. The [instructor tracker](../instructor-exercises/) covers the separate classroom repository. The CSV [lab register](lab-register.csv) is available for filtering.
+The [verification record](verification.md) explains the source and exclusions. The [certification-preparation record](certification-preparation.md) lists the new results and study coverage. The [instructor tracker](../instructor-exercises/) covers the separate classroom repository. The CSV [lab register](lab-register.csv) is available for filtering.
 
 ## Tracks
 

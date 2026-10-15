@@ -12,7 +12,7 @@ What I built, what broke, and the one decision in each lab that was worth writin
 
 **Czekinah Tolentino · PHMAN29**
 
-Updated 15 October 2026. Canvas results last verified 13 October 2026, 22:49 Manila.
+Updated 15 October 2026. Labs and regular KCs verified 13 October 2026, 22:49 Manila; certification-preparation results verified 15 October 2026.
 
 ## Start here
 
@@ -39,7 +39,7 @@ The existing deep dives, with commands, transcripts, and the failures worth keep
 
 ## Coursework
 
-**69/69 labs submitted, 69/69 points. 83/83 regular knowledge checks submitted, 8,280/8,300 points (99.76%).** The 13 certification-preparation checks are separate and are not included in these completed totals. See the dated [verification record](coursework/verification.md).
+**69/69 labs submitted, 69/69 points. 83/83 regular knowledge checks submitted, 8,280/8,300 points (99.76%).** All **13/13 certification-preparation checks** are now submitted and recorded separately: eleven at 100%, Scenario Strategy at 77.77%, and the final Assessment at 97.95%. See the [preparation record](coursework/certification-preparation.md) and dated [verification record](coursework/verification.md). Course practice is not an official certification credential.
 
 | Track | Labs | Track | Labs |
 |---|---|---|---|
