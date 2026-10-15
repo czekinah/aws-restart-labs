@@ -14,7 +14,7 @@ The instructor repository contains nine exercises. This table links the work alr
 | 06 | MySQL conditional search | [Sixteen queries and results](../sql-conditional-search/) | Query work documented; not a claim of a newly verified EC2 bootstrap |
 | 07 | ACM, ALB, and HTTPS | Related load-balancing and DNS labs | Pending: allowed sandbox services, controlled public hostname, issued certificate, HTTPS and redirect evidence |
 | 08 | Multiple-table queries | [Fifteen queries and results](../sql-multi-table-joins/) | Existing query work documented |
-| 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and a separate [application test record](09-rds-crud/) | Deployed: bootstrap, CRUD, duplicate-email and health checks passed; EC2 replacement and cleanup pending |
+| 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and a separate [application test record](09-rds-crud/) | Bootstrap, CRUD, duplicate-email, health, and EC2 replacement tests passed; final cleanup pending |
 
 ## Deployment evidence still needed
 
@@ -62,7 +62,7 @@ The [deployment checklist and test record](09-rds-crud/) separates expected beha
 - [x] Profile Manager bootstrap succeeds; credentials stay outside the repository and public web root.
 - [x] Create, read, update, delete, and duplicate-email checks pass with sample data.
 - [x] Health endpoint confirms the database round trip.
-- [ ] A sample row survives replacement of the original EC2 instance while RDS remains intact.
+- [x] A sample row survives replacement of the original EC2 instance while RDS remains intact.
 - [ ] Evidence is captured before approved cleanup.
 
 ## Working rules

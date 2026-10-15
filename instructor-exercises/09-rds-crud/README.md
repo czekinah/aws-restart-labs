@@ -1,6 +1,6 @@
 # EC2 + private RDS: deployment checklist
 
-**Status: app deployed; CRUD and health checks passed. Server-replacement test and cleanup pending.** Updated 15 October 2026.
+**Status: app, CRUD, health, and server-replacement persistence tests passed. Final resource cleanup pending.** Updated 15 October 2026.
 
 This is the remaining application exercise, not a replacement for my completed [private RDS challenge](../../rds-private-mysql/). The aim is to run Profile Manager on EC2, store its rows in RDS, and prove that replacing the web server does not erase the data.
 
@@ -18,7 +18,7 @@ The instructor's script is the application source. Credentials and the private c
 
 ## Test record
 
-Results are recorded only after observing them in the app or AWS console. The replacement and cleanup steps remain pending.
+Results are recorded only after observing them in the app or AWS console. Final resource cleanup remains pending.
 
 | Check | Action | Expected result | Observed result |
 |---|---|---|---|
@@ -30,7 +30,8 @@ Results are recorded only after observing them in the app or AWS console. The re
 | Unique email | Add another row with `learner@example.com` | Duplicate-email error; no second row | Passed: `That email already exists.` and only one row |
 | Delete | Remove the sample learner | Row disappears | Passed: `Profile deleted.` and zero profiles |
 | Persistence, before | Add `Persistence Check`, `persistence@example.com` | Record is visible on the first server | Passed: ID 3, Student role, created 2026-10-15 10:54:19, remained after reload |
-| Persistence, after | Replace EC2, retaining RDS and its data | The record is visible on the replacement server | Pending |
+| Persistence, after | Replace EC2, retaining RDS and its data | The record is visible on the replacement server | Passed: original EC2 terminated; replacement showed the same ID 3, name, email, Student role, and original creation time. Replacement health endpoint also reported `healthy` |
+| Replacement startup | Inspect diagnostics and system log | Healthy instance and completed setup | Passed: system, instance, and attached-EBS checks passed; RDS reachable on first attempt; Apache running and bootstrap complete |
 | Cleanup | Remove only the exercise resources after evidence capture | No temporary app server or database remains | Pending |
 
 ## Evidence to keep
@@ -47,7 +48,19 @@ Private console screenshots can support the submission. Public notes should reco
 
 - The scoped network rules are created, and the private, encrypted RDS instance has been provisioned.
 - The first EC2 server successfully deployed the instructor's app using the supplied instance profile. Only dummy records were tested.
-- Replace the first EC2 server while retaining RDS, then verify the exact saved persistence record on the replacement.
+- The first EC2 instance was terminated before launching its replacement with the same bootstrap and security group. The existing RDS record remained unchanged; it was not recreated in the replacement app.
 - Capture final evidence and remove the temporary exercise resources before marking the whole exercise complete.
+
+## What I verified
+
+The web server is disposable, but the data is not stored on its root disk. A new EC2 hostname and public address served the original profile from the same RDS database. The unchanged record ID and creation time made this a persistence check, not just another successful app launch.
+
+### Self-check
+
+1. **Why reference the EC2 security group?** Only instances carrying that group can connect on MySQL port 3306. Replacing the web server does not require allowing a new public IP at the database.
+2. **What happens to rows when EC2 is terminated?** They remain in RDS while the database is retained. I verified this with the persistence profile.
+3. **Why wait before creating the schema?** RDS needs to finish becoming available and accept authenticated connections before SQL initialization can succeed.
+4. **Which group allows EC2-to-RDS traffic?** The database security group's inbound rule allows port 3306 from the app security group; outbound traffic and network routing must also permit the connection.
+5. **How can HTTP and database failures be separated?** An unreachable page calls for checking the app's HTTP rule, public address, and Apache. A loaded app with a failed health response calls for checking RDS availability, endpoint, credentials, and database network rules.
 
 [Back to the instructor exercise tracker](../)
