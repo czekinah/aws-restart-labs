@@ -14,7 +14,7 @@ The instructor repository contains nine exercises. This table links the work alr
 | 06 | MySQL conditional search | [Sixteen queries and results](../sql-conditional-search/) | Query work documented; not a claim of a newly verified EC2 bootstrap |
 | 07 | ACM, ALB, and HTTPS | Related load-balancing and DNS labs | Pending: allowed sandbox services, controlled public hostname, issued certificate, HTTPS and redirect evidence |
 | 08 | Multiple-table queries | [Fifteen queries and results](../sql-multi-table-joins/) | Existing query work documented |
-| 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and Canvas migration results | Partial: run Profile Manager CRUD checks and prove persistence after EC2 replacement |
+| 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and a separate [application test checklist](09-rds-crud/) | Prepared, not deployed: run Profile Manager CRUD checks and prove persistence after EC2 replacement |
 
 ## Deployment evidence still needed
 
@@ -55,6 +55,8 @@ Next step: obtain the instructor's supported sandbox or approved region for this
 An EC2 hostname, an ALB-generated hostname, or a private domain is not a substitute for a public hostname whose DNS can be controlled. Do not bypass restrictions in the training account.
 
 ### 09: Persistent CRUD application
+
+The [deployment checklist and test record](09-rds-crud/) separates expected behavior from observed results. Oregon is explicitly permitted by this exercise; the S3 exercise's denied Ohio request is not being retried in a different region.
 
 - [ ] Private RDS and EC2 are in the same VPC; database access is limited to the application security group.
 - [ ] Profile Manager bootstrap succeeds; credentials stay outside the repository and public web root.
