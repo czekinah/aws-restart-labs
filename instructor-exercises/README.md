@@ -14,7 +14,7 @@ The instructor repository contains nine exercises. This table links the work alr
 | 06 | MySQL conditional search | [Sixteen queries and results](../sql-conditional-search/) | Query work documented; not a claim of a newly verified EC2 bootstrap |
 | 07 | ACM, ALB, and HTTPS | Related load-balancing and DNS labs | Pending: allowed sandbox services, controlled public hostname, issued certificate, HTTPS and redirect evidence |
 | 08 | Multiple-table queries | [Fifteen queries and results](../sql-multi-table-joins/) | Existing query work documented |
-| 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and a separate [application test checklist](09-rds-crud/) | Prepared, not deployed: run Profile Manager CRUD checks and prove persistence after EC2 replacement |
+| 09 | EC2 + RDS CRUD app | [Private RDS](../rds-private-mysql/) and a separate [application test record](09-rds-crud/) | Deployed: bootstrap, CRUD, duplicate-email and health checks passed; EC2 replacement and cleanup pending |
 
 ## Deployment evidence still needed
 
@@ -58,10 +58,10 @@ An EC2 hostname, an ALB-generated hostname, or a private domain is not a substit
 
 The [deployment checklist and test record](09-rds-crud/) separates expected behavior from observed results. Oregon is explicitly permitted by this exercise; the S3 exercise's denied Ohio request is not being retried in a different region.
 
-- [ ] Private RDS and EC2 are in the same VPC; database access is limited to the application security group.
-- [ ] Profile Manager bootstrap succeeds; credentials stay outside the repository and public web root.
-- [ ] Create, read, update, delete, and duplicate-email checks pass with sample data.
-- [ ] Health endpoint confirms the database round trip.
+- [x] Private RDS and EC2 are in the same VPC; database access is limited to the application security group.
+- [x] Profile Manager bootstrap succeeds; credentials stay outside the repository and public web root.
+- [x] Create, read, update, delete, and duplicate-email checks pass with sample data.
+- [x] Health endpoint confirms the database round trip.
 - [ ] A sample row survives replacement of the original EC2 instance while RDS remains intact.
 - [ ] Evidence is captured before approved cleanup.
 
